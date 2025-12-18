@@ -6,13 +6,12 @@
 class Compression {
     private:
         double work, pressure_ratio, isentropic_efficiency;
-        bool isBrayton;
+        bool isOtto;
 
     public:
         Compression(double,double,bool);
         void compute(ThermodynamicCycle&, const AirProperties&);
         double get_work();
-        double get_heat();
 
 };
 

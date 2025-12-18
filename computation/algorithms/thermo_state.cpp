@@ -6,7 +6,7 @@ State::State(double pressure, double temperature, double specific_vol, double en
 
 vector<State> ThermodynamicCycle::get_ThermodynamicStates() {return this->ThermodynamicStates;}
 
-void ThermodynamicCycle::add_ThermodynamicStates(double pressure, double temp, double specific_vol, double enthalpy, double internal_energy, double entropy)
+void ThermodynamicCycle::add_ThermodynamicStates(double& pressure, double& temp, double& specific_vol, double& enthalpy, double& internal_energy, double& entropy)
 {
     this->ThermodynamicStates.push_back(State(pressure,temp,specific_vol,enthalpy,internal_energy,entropy));
 }

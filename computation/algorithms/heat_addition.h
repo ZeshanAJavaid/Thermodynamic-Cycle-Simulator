@@ -1,10 +1,17 @@
 #pragma once
 #include "thermo_state.h"
+#include "../tools/gas.h"
+#include <cmath>
 
 class HeatAddition {
     private:
-        double heating_val;
+
+        bool isOtto;
+        double heating_value;
+
     public:
-        void compute(ThermodynamicCycle);
+
+        HeatAddition(double, bool);
+        void compute(ThermodynamicCycle&, const AirProperties&);
 
 };
