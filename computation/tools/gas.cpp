@@ -185,3 +185,33 @@ vector<double> AirProperties::get_low_polynomials() const
 {
        return this->polynomial_consts_low;
 }
+
+double AirProperties::get_temperature_from_enthalpy(double target_h) const
+{
+    double T = 300.0;
+    for(int i = 0; i < 50; i++)
+    {
+       double h_guess = this->get_enthalpy(T);
+       double error = h_guess - target_h;
+       
+       if(abs(error) < 0.01) return T;
+       
+       T = T - error / this->get_cp(T);
+    }
+    return T;
+}
+
+double AirProperties::get_temperature_from_internal_energy(double target_u) const
+{
+    double T = 300.0; 
+    for(int i = 0; i < 50; i++)
+    {
+       double u_guess = this->get_internal_energy(T);
+       double error = u_guess - target_u;
+       
+       if(abs(error) < 0.01) return T; 
+       
+       T = T - error / this->get_cv(T);
+    }
+    return T;
+}

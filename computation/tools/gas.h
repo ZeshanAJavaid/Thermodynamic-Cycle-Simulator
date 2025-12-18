@@ -65,4 +65,6 @@ class AirProperties
         double get_R() const;
         vector<double> get_low_polynomials() const;
         vector<double> get_high_polynomials() const;
+        double get_temperature_from_enthalpy(double target_h) const;
+        double get_temperature_from_internal_energy(double target_u) const;
 };

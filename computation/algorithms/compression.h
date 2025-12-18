@@ -12,7 +12,6 @@ class Compression {
         Compression(double,double,bool);
         void compute(ThermodynamicCycle&, const AirProperties&);
         double get_work();
-        double get_heat();
 
 };
 

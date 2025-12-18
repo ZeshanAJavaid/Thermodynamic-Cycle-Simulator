@@ -5,10 +5,16 @@
 
 class Expansion{
     private:
-        double work, pressure_ratio, isentropic_efficiency;
-        bool isOtto;
+
+        double work, isentropic_efficiency;
+        bool isBrayton;
 
     public:
+
+        Expansion(double,bool);
+        double get_work();
+        void compute(ThermodynamicCycle&, const AirProperties&);
+
 
 };
 

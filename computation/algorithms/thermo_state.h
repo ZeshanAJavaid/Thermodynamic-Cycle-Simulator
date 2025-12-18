@@ -31,7 +31,7 @@ class ThermodynamicCycle
     public:
         ThermodynamicCycle();
         vector<State> get_ThermodynamicStates();
-        void add_ThermodynamicStates(double, double, double, double, double, double);
+        void add_ThermodynamicStates(double&, double&, double&, double&, double&, double&);
         void output_csv(string);
         
 };  
