@@ -1,3 +1,0 @@
-/mnt/d/Personal-Projects/Professional-Projects/Thermodynamic-Cycle-Simulator/build/CMakeFiles/sim.dir
-/mnt/d/Personal-Projects/Professional-Projects/Thermodynamic-Cycle-Simulator/build/CMakeFiles/edit_cache.dir
-/mnt/d/Personal-Projects/Professional-Projects/Thermodynamic-Cycle-Simulator/build/CMakeFiles/rebuild_cache.dir
