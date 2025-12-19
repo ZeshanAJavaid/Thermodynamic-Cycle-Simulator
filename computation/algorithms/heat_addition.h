@@ -5,14 +5,13 @@
 
 class HeatAddition {
     private:
+
         bool isOtto;
-        bool isClosedSystem; 
         double heating_value;
-        double work_done;  
 
     public:
-        HeatAddition(double, bool, bool); 
+
+        HeatAddition(double, bool);
         void compute(ThermodynamicCycle&, const AirProperties&);
-        double get_heating_value();
-        double get_work();
+
 };

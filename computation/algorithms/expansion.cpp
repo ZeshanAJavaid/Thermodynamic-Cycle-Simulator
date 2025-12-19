@@ -22,7 +22,7 @@ void Expansion::compute(ThermodynamicCycle& state, const AirProperties& AIR)
         {
             pressure = heat_addition_state.pressure * pow(pressure_ratio,AIR.get_gamma(heat_addition_state.temperature));
 
-            temperature = heat_addition_state.temperature * pow(pressure_ratio,AIR.get_gamma(heat_addition_state.temperature) - 1);
+            temperature = heat_addition_state.temperature * pow(pressure_ratio,AIR.get_gamma(heat_addition_state.temperature - 1));
 
             enthalpy = AIR.get_enthalpy(temperature);
 
@@ -36,17 +36,17 @@ void Expansion::compute(ThermodynamicCycle& state, const AirProperties& AIR)
         {
             pressure = heat_addition_state.pressure * pow(pressure_ratio,AIR.get_gamma(heat_addition_state.temperature));
 
-            temperature_ideal = heat_addition_state.temperature * pow(pressure_ratio,AIR.get_gamma(heat_addition_state.temperature) - 1);
+            temperature_ideal = heat_addition_state.temperature * pow(pressure_ratio,AIR.get_gamma(heat_addition_state.temperature - 1));
 
-            this->work = (heat_addition_state.internal_energy - AIR.get_internal_energy(temperature_ideal)) * this->isentropic_efficiency / 100;
+            this->work = (heat_addition_state.internal_energy - AIR.get_internal_energy(temperature)) * this->isentropic_efficiency / 100;
 
             internal_energy = heat_addition_state.internal_energy - this->work;
 
-            temperature = temperature = AIR.get_temperature_from_internal_energy(internal_energy);
+            temperature = internal_energy / AIR.get_cv(temperature_ideal);
 
             enthalpy = AIR.get_enthalpy(temperature);
             
-            entropy = heat_addition_state.entropy + AIR.get_entropy(temperature_ideal) - AIR.get_entropy(heat_addition_state.temperature) - AIR.get_R() * log(pressure / heat_addition_state.pressure);
+            entropy = heat_addition_state.entropy + AIR.get_cv(temperature) * log(temperature / heat_addition_state.temperature) + AIR.get_R() * log(1 / pressure_ratio);
 
         }
     }
@@ -61,7 +61,7 @@ void Expansion::compute(ThermodynamicCycle& state, const AirProperties& AIR)
 
             temperature = heat_addition_state.temperature * pow(pressure_ratio,(AIR.get_gamma(heat_addition_state.temperature) - 1) / AIR.get_gamma(heat_addition_state.temperature));
 
-            specific_vol = heat_addition_state.specific_vol * pow(pressure_ratio, -1 / AIR.get_gamma(temperature));
+            specific_vol = heat_addition_state.specific_vol * pow(pressure_ratio, 1 / AIR.get_gamma(temperature));
 
             enthalpy = AIR.get_enthalpy(temperature);
 
@@ -79,13 +79,13 @@ void Expansion::compute(ThermodynamicCycle& state, const AirProperties& AIR)
 
             enthalpy = heat_addition_state.enthalpy - this->work;
 
-            temperature = temperature = AIR.get_temperature_from_enthalpy(enthalpy);
+            temperature = enthalpy / AIR.get_cp(temperature_ideal);
 
-            specific_vol = heat_addition_state.specific_vol * pow(pressure_ratio, -1 / AIR.get_gamma(temperature));
+            specific_vol = heat_addition_state.specific_vol * pow(pressure_ratio, 1 / AIR.get_gamma(temperature));
 
             internal_energy = AIR.get_internal_energy(temperature);
 
-            entropy = heat_addition_state.entropy + AIR.get_entropy(temperature_ideal) - AIR.get_entropy(heat_addition_state.temperature) - AIR.get_R() * log(pressure_ratio);
+            entropy = heat_addition_state.entropy + AIR.get_cp(temperature) * log(temperature / heat_addition_state.temperature) - AIR.get_R() * log(pressure_ratio);
         }
     }
 

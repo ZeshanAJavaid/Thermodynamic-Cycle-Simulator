@@ -1,6 +1,6 @@
 #include "compression.h"
 
-Compression::Compression(double pressure_ratio, double eff, bool isBrayton) : pressure_ratio(pressure_ratio), isentropic_efficiency(eff), isBrayton(isBrayton) {}
+Compression::Compression(double pressure_ratio, double eff, bool isOtto) : pressure_ratio(pressure_ratio), isentropic_efficiency(eff), isOtto(isOtto) {}
 
 double Compression::get_work()
 {
@@ -10,10 +10,8 @@ double Compression::get_work()
 void Compression::compute(ThermodynamicCycle& state, const AirProperties& AIR)
 {
     double pressure_ideal, pressure, temperature_ideal, temperature, specific_vol, enthalpy, internal_energy, entropy;
-    State initial_state = state.get_ThermodynamicStates().at(state.get_ThermodynamicStates().size() - 1);
-
-    
-    if(this->isBrayton)
+    State initial_state = state.get_ThermodynamicStates().at(state.get_ThermodynamicStates().size() - 1);;
+    if(!this->isOtto)
     {
         pressure = initial_state.pressure * this->pressure_ratio; 
 
@@ -21,9 +19,9 @@ void Compression::compute(ThermodynamicCycle& state, const AirProperties& AIR)
         {
             temperature = initial_state.temperature * pow(this->pressure_ratio,((AIR.get_gamma(initial_state.temperature) - 1) / AIR.get_gamma(initial_state.temperature)));
 
-            specific_vol = AIR.get_R() * temperature / pressure;
+            specific_vol = AIR.get_R() * pressure / temperature;
 
-            this->work = (AIR.get_enthalpy(temperature) - initial_state.enthalpy);
+            this->work = (initial_state.enthalpy - AIR.get_enthalpy(temperature));
 
             enthalpy = AIR.get_enthalpy(temperature);
 
@@ -35,17 +33,17 @@ void Compression::compute(ThermodynamicCycle& state, const AirProperties& AIR)
         {
             temperature_ideal = initial_state.temperature * pow(this->pressure_ratio,((AIR.get_gamma(initial_state.temperature) - 1) / AIR.get_gamma(initial_state.temperature)));
 
-            this->work = (AIR.get_enthalpy(temperature_ideal) - initial_state.enthalpy) / this->isentropic_efficiency * 100;
+            this->work = (initial_state.enthalpy - AIR.get_enthalpy(temperature_ideal)) / this->isentropic_efficiency * 100;
 
-            enthalpy = initial_state.enthalpy +  this->work;
+            enthalpy = initial_state.enthalpy -  this->work;
             
-            temperature = AIR.get_temperature_from_enthalpy(enthalpy);
+            temperature = enthalpy / AIR.get_cp(temperature_ideal);
 
             specific_vol = AIR.get_R() * temperature / pressure;
 
             internal_energy = AIR.get_internal_energy(temperature);
             
-            entropy = initial_state.entropy + AIR.get_entropy(temperature_ideal) - AIR.get_entropy(initial_state.temperature) - AIR.get_R() * log(pressure_ratio);
+            entropy = initial_state.entropy + AIR.get_cp(temperature) * log(temperature / initial_state.temperature) - AIR.get_R() * log(pressure_ratio);
         }   
     }
     
@@ -58,8 +56,6 @@ void Compression::compute(ThermodynamicCycle& state, const AirProperties& AIR)
             pressure = initial_state.pressure * pow(pressure_ratio,AIR.get_gamma(initial_state.temperature));
 
             temperature = pressure * specific_vol / AIR.get_R();
-
-            this->work = (AIR.get_internal_energy(temperature) - initial_state.internal_energy);
 
             internal_energy = AIR.get_internal_energy(temperature);
 
@@ -75,13 +71,13 @@ void Compression::compute(ThermodynamicCycle& state, const AirProperties& AIR)
 
             internal_energy = initial_state.internal_energy + this->work;
 
-            temperature = AIR.get_temperature_from_internal_energy(internal_energy);
+            temperature = internal_energy / AIR.get_cv(temperature_ideal);
 
             pressure = AIR.get_R() * temperature / specific_vol;
 
             enthalpy = AIR.get_enthalpy(temperature);
 
-            entropy = initial_state.entropy + AIR.get_entropy(temperature_ideal) - AIR.get_entropy(initial_state.temperature) + AIR.get_R() * log(1 / pressure_ratio);
+            entropy = initial_state.entropy + AIR.get_cv(temperature) * log(temperature / initial_state.temperature) + AIR.get_R() * log(1 / pressure_ratio);
         }
     }
 

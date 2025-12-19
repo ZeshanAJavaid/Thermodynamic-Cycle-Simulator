@@ -13,6 +13,5 @@ class HeatRejection {
 
         HeatRejection(bool);
         void compute(ThermodynamicCycle&, const AirProperties&);
-        double get_heat();
 
 };
