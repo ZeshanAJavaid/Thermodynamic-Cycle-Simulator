@@ -23,3 +23,5 @@ void HeatRejection::compute(ThermodynamicCycle& state, const AirProperties& AIR)
 
     state.add_ThermodynamicStates(pressure,temperature,specific_vol,enthalpy,internal_energy,entropy);
 }
+
+double HeatRejection::get_heat() {return this->heat;}

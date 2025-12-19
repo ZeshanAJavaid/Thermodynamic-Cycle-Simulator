@@ -6,7 +6,7 @@
 class Compression {
     private:
         double work, pressure_ratio, isentropic_efficiency;
-        bool isOtto;
+        bool isBrayton;
 
     public:
         Compression(double,double,bool);
