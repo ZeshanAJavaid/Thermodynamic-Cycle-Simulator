@@ -1,8 +1,21 @@
-#include "./computation/computation.h"
+#include "gui/src/headers/main_window.h"
+#include <QApplication>
+#include <QScreen>
 
-int main()
+int main(int argc, char* argv[])
 {
-    Computation solver(Cycles(0),100.0,400.0,40,100.0,100.0);
+    QApplication app(argc, argv);
+    
+    MainWindow* mainWin = new MainWindow();
 
-    solver.compute();
+    QScreen *screen = QGuiApplication::primaryScreen();
+    QRect screenGeometry = screen->availableGeometry();
+    QRect windowGeometry = mainWin->frameGeometry();
+    windowGeometry.moveCenter(screenGeometry.center());
+    mainWin->move(windowGeometry.topLeft());
+
+
+    mainWin->show();
+
+    return app.exec();
 }

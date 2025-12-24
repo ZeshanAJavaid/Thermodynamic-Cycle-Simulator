@@ -23,8 +23,8 @@ void Diesel::compute()
 
     performance_of_cycle.compute(squeeze, spark, bang, blow);
 
-    cycle.output_csv("diesel_cycle.csv");
-    performance_of_cycle.output_csv("diesel_performance.csv");
+    cycle.output_csv("cycle.csv");
+    performance_of_cycle.output_csv("performance.csv");
 }
 
 double Diesel::get_squeeze_efficiency() { return this->squeeze_efficiency; }

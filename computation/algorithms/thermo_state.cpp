@@ -13,7 +13,7 @@ void ThermodynamicCycle::add_ThermodynamicStates(double& pressure, double& temp,
 
 void ThermodynamicCycle::output_csv(string file_name)
 {
-    ofstream ofs("./output/"+file_name);
+    ofstream ofs(string(PROJECT_PATH) + "/output/"+file_name);
 
     ofs << "Pressure (kPa),Temperature (K), Specific Volume (m^3 / kg), Enthalpy (kJ / kg), Internal Energy (kJ / kg), Entropy (kJ / kg * K) \n";
 

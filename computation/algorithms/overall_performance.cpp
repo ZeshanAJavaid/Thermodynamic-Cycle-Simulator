@@ -17,7 +17,7 @@ void Performance::compute(Compression& compres, HeatAddition& heat_add, Expansio
 
 void Performance::output_csv(string file_name)
 {
-    ofstream ofs("./output/"+file_name);
+    ofstream ofs(string(PROJECT_PATH) + "/output/"+file_name);
 
     ofs << "Efficiency, Work of Compressor (kJ / kg), Work of Turbine (kJ / kg), Work of Cycle (kJ / kg), Heat Addition (kJ / kg), Heat Rejection (kJ / kg)\n";
     ofs << (this->efficiency * 100) << "," << this->work_compres << "," << this->work_expan << "," << (this->work_expan - this->work_compres) << "," << this->heat_addition << "," << this->heat_rejection;

@@ -23,8 +23,8 @@ void Otto::compute()
 
     performance_of_cycle.compute(squeeze, spark, bang, blow);
 
-    cycle.output_csv("otto_cycle.csv");
-    performance_of_cycle.output_csv("otto_performance.csv");
+    cycle.output_csv("cycle.csv");
+    performance_of_cycle.output_csv("performance.csv");
 }
 
 double Otto::get_squeeze_efficiency() { return this->squeeze_efficiency; }

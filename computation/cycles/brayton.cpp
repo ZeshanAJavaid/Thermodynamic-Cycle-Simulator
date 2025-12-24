@@ -23,8 +23,9 @@ void Brayton::compute()
 
     performance_of_cycle.compute(compressor, combustion_chamber, turbine, atmosphere);
 
-    cycle.output_csv("brayton_cycle.csv");
-    performance_of_cycle.output_csv("brayton_performance.csv");
+    cycle.output_csv("cycle.csv");
+    
+    performance_of_cycle.output_csv("performance.csv");
 }
 
 double Brayton::get_compressor_eff() { return this->compressor_efficiency; }
