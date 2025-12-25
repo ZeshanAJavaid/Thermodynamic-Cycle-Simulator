@@ -311,7 +311,8 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsTargets-none.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake",
-		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake"
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake",
+		"/mnt/d/Personal-Projects/Professional-Projects/Thermodynamic-Cycle-Simulator/images.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/mnt/d/Personal-Projects/Professional-Projects/Thermodynamic-Cycle-Simulator",
 	"DEP_FILE" : "/mnt/d/Personal-Projects/Professional-Projects/Thermodynamic-Cycle-Simulator/build/sim_autogen/deps",

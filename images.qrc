@@ -1,0 +1,8 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>gui/graphics/brayton_cycle.png</file>
+        <file>gui/graphics/diesel_cycle.png</file>
+        <file>gui/graphics/otto_cycle.png</file>
+    </qresource>
+</RCC>

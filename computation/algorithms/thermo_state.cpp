@@ -6,14 +6,14 @@ State::State(double pressure, double temperature, double specific_vol, double en
 
 vector<State> ThermodynamicCycle::get_ThermodynamicStates() {return this->ThermodynamicStates;}
 
-void ThermodynamicCycle::add_ThermodynamicStates(double& pressure, double& temp, double& specific_vol, double& enthalpy, double& internal_energy, double& entropy)
+void ThermodynamicCycle::add_ThermodynamicStates(double pressure, double temp, double specific_vol, double enthalpy, double internal_energy, double entropy)
 {
     this->ThermodynamicStates.push_back(State(pressure,temp,specific_vol,enthalpy,internal_energy,entropy));
 }
 
 void ThermodynamicCycle::output_csv(string file_name)
 {
-    ofstream ofs(string(PROJECT_PATH) + "/output/"+file_name);
+    ofstream ofs(string(PROJECT_PATH) + "/output/"+file_name); // PROJECT_PATH is a macro created by the cmake to indicate the root directory of this project
 
     ofs << "Pressure (kPa),Temperature (K), Specific Volume (m^3 / kg), Enthalpy (kJ / kg), Internal Energy (kJ / kg), Entropy (kJ / kg * K) \n";
 

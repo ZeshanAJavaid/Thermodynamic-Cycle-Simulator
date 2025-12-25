@@ -139,7 +139,7 @@ color: rgb(255,255,255);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../graphics/diesel_cycle.png</pixmap>
+     <pixmap resource="../../images.qrc">:/gui/graphics/diesel_cycle.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -454,6 +454,8 @@ color: rgb(255,255,255);</string>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../images.qrc"/>
+ </resources>
  <connections/>
 </ui>

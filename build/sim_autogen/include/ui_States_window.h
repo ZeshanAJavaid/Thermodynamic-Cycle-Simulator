@@ -61,7 +61,7 @@ public:
         Title->setAlignment(Qt::AlignCenter);
         States = new QTableView(centralwidget);
         States->setObjectName("States");
-        States->setGeometry(QRect(10, 90, 1001, 411));
+        States->setGeometry(QRect(50, 160, 941, 271));
         Quit_Button = new QPushButton(centralwidget);
         Quit_Button->setObjectName("Quit_Button");
         Quit_Button->setGeometry(QRect(30, 550, 141, 51));

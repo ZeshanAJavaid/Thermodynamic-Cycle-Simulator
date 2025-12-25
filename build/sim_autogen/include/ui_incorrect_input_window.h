@@ -51,6 +51,7 @@ public:
         font.setPointSize(12);
         font.setBold(true);
         Close_Button->setFont(font);
+        Close_Button->setStyleSheet(QString::fromUtf8("background-color: rgb(115, 38, 0);"));
         Title_Label = new QLabel(centralwidget);
         Title_Label->setObjectName("Title_Label");
         Title_Label->setGeometry(QRect(0, 20, 601, 51));
@@ -59,8 +60,8 @@ public:
         font1.setPointSize(16);
         font1.setBold(true);
         Title_Label->setFont(font1);
-        Title_Label->setStyleSheet(QString::fromUtf8("background-color: rgb(206, 0, 0)"));
-        Title_Label->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
+        Title_Label->setStyleSheet(QString::fromUtf8("background-color: rgb(138, 0, 69);"));
+        Title_Label->setAlignment(Qt::AlignCenter);
         Title_Label->setWordWrap(true);
         Error_Label = new QLabel(centralwidget);
         Error_Label->setObjectName("Error_Label");
@@ -70,7 +71,7 @@ public:
         font2.setPointSize(12);
         font2.setBold(false);
         Error_Label->setFont(font2);
-        Error_Label->setStyleSheet(QString::fromUtf8("background-color: rgb(206, 0, 0)"));
+        Error_Label->setStyleSheet(QString::fromUtf8("background-color: rgb(127, 0, 0);"));
         Error_Label->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         Error_Label->setWordWrap(true);
         ErrorWindow->setCentralWidget(centralwidget);

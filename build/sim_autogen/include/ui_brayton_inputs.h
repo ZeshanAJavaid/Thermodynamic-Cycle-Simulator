@@ -60,7 +60,7 @@ public:
         Brayton_Image = new QLabel(centralwidget);
         Brayton_Image->setObjectName("Brayton_Image");
         Brayton_Image->setGeometry(QRect(10, 80, 521, 511));
-        Brayton_Image->setPixmap(QPixmap(QString::fromUtf8("../graphics/brayton_cycle.png")));
+        Brayton_Image->setPixmap(QPixmap(QString::fromUtf8(":/gui/graphics/brayton_cycle.png")));
         Brayton_Image->setScaledContents(true);
         Title = new QLabel(centralwidget);
         Title->setObjectName("Title");

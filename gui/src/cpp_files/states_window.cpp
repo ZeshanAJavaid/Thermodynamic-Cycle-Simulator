@@ -26,7 +26,7 @@ StateWindow::StateWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::Stat
     connect(ui->Performance_Button, &QPushButton::clicked, this, &StateWindow::OpenThermoData);
     connect(ui->Help_Button, &QPushButton::clicked, this, &StateWindow::OpenHelpWindow);
 
-    loadCsvData(std::string(PROJECT_PATH) +"/output/cycle.csv");
+    loadCsvData(QString::fromStdString(std::string(PROJECT_PATH) + "/output/cycle.csv"));
 
     ui->States->setModel(csvModel);
     ui->States->resizeColumnsToContents();

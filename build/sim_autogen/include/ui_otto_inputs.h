@@ -101,7 +101,7 @@ public:
         Otto_Image = new QLabel(centralwidget);
         Otto_Image->setObjectName("Otto_Image");
         Otto_Image->setGeometry(QRect(0, 80, 521, 511));
-        Otto_Image->setPixmap(QPixmap(QString::fromUtf8("../graphics/otto_cycle.png")));
+        Otto_Image->setPixmap(QPixmap(QString::fromUtf8(":/gui/graphics/otto_cycle.png")));
         Otto_Image->setScaledContents(true);
         Title = new QLabel(centralwidget);
         Title->setObjectName("Title");

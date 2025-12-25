@@ -82,7 +82,7 @@ public:
         Diesel_Image = new QLabel(centralwidget);
         Diesel_Image->setObjectName("Diesel_Image");
         Diesel_Image->setGeometry(QRect(10, 80, 521, 511));
-        Diesel_Image->setPixmap(QPixmap(QString::fromUtf8("../graphics/diesel_cycle.png")));
+        Diesel_Image->setPixmap(QPixmap(QString::fromUtf8(":/gui/graphics/diesel_cycle.png")));
         Diesel_Image->setScaledContents(true);
         Initial_Temperature_Label = new QLabel(centralwidget);
         Initial_Temperature_Label->setObjectName("Initial_Temperature_Label");

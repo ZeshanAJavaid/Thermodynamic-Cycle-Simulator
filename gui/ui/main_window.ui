@@ -103,7 +103,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../graphics/brayton_cycle.png</pixmap>
+     <pixmap resource="../../images.qrc">:/gui/graphics/brayton_cycle.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -122,7 +122,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../graphics/otto_cycle.png</pixmap>
+     <pixmap resource="../../images.qrc">:/gui/graphics/otto_cycle.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -141,7 +141,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../graphics/diesel_cycle.png</pixmap>
+     <pixmap resource="../../images.qrc">:/gui/graphics/diesel_cycle.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -172,6 +172,8 @@
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../images.qrc"/>
+ </resources>
  <connections/>
 </ui>

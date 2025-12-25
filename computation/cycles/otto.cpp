@@ -9,7 +9,10 @@ Otto::Otto(double p, double T, double squeeze_efficiency, double ratio, double b
 
 void Otto::compute()
 {
-    double initial_specific_vol = AIR.get_R() * this->initial_temperature / this->initial_pressure, initial_enthalpy = AIR.get_enthalpy(this->initial_temperature), initial_internal_energy = AIR.get_internal_energy(this->initial_temperature), initial_entropy = AIR.get_entropy(this->initial_temperature);
+    double initial_specific_vol = AIR.get_R() * this->initial_temperature / this->initial_pressure;
+    double initial_enthalpy = AIR.get_enthalpy(this->initial_temperature);
+    double initial_internal_energy = AIR.get_internal_energy(this->initial_temperature);
+    double initial_entropy = AIR.get_entropy(this->initial_temperature) - AIR.get_R() * log(initial_pressure);
 
     cycle.add_ThermodynamicStates(initial_pressure, initial_temperature, initial_specific_vol, initial_enthalpy, initial_internal_energy, initial_entropy);
 

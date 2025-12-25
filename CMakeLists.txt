@@ -24,6 +24,8 @@ file(GLOB_RECURSE SOURCES
     "gui/ui/*.ui"
     "gui/src/headers/*.h"
     "gui/src/cpp_files/*.cpp"
+
+    "images.qrc"
     
     "main.cpp"
 )
@@ -46,6 +48,5 @@ add_executable(sim ${SOURCES})
 # Tell AUTOUIC to look in the 'gui/ui' folder if it can't find the .ui file next to the .cpp
 set_property(TARGET sim APPEND PROPERTY AUTOUIC_SEARCH_PATHS "${CMAKE_CURRENT_SOURCE_DIR}/gui/ui")
 target_compile_definitions(sim PRIVATE PROJECT_PATH="${CMAKE_CURRENT_SOURCE_DIR}")
-# --- CRITICAL FIX END ---
 
 target_link_libraries(sim PRIVATE Qt6::Widgets)

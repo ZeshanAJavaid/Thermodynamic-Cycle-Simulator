@@ -44,6 +44,7 @@ sim_autogen/timestamp: \
 	/mnt/d/Personal-Projects/Professional-Projects/Thermodynamic-Cycle-Simulator/gui/src/headers/performance.h \
 	/mnt/d/Personal-Projects/Professional-Projects/Thermodynamic-Cycle-Simulator/gui/src/headers/selection.h \
 	/mnt/d/Personal-Projects/Professional-Projects/Thermodynamic-Cycle-Simulator/gui/src/headers/states_window.h \
+	/mnt/d/Personal-Projects/Professional-Projects/Thermodynamic-Cycle-Simulator/images.qrc \
 	/mnt/d/Personal-Projects/Professional-Projects/Thermodynamic-Cycle-Simulator/main.cpp \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/errno-base.h \
