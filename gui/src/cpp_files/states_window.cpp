@@ -126,7 +126,7 @@ void StateWindow::OpenHelpWindow()
         // Opens help window and sets the appropriate messages
         HelpWindow* helpWindow = new HelpWindow();
         helpWindow->setAttribute(Qt::WA_DeleteOnClose);
-        helpWindow->setHelpText("Following Proccess:\n\t1. State 1 -> State 2: Compression \n\t2. State 2 -> State3: Heat Addition\n\t3. State 3 -> State 4: Expansion\n\t5. State 4 -> State 1: Heat Rejection");
+        helpWindow->setHelpText("Following Proccess:\n\t1. State 1 -> State 2: Compression \n\t2. State 2 -> State3: Heat Addition\n\t3. State 3 -> State 4: Expansion\n\t5. State 4 -> State 1: Heat Rejection\n\nButtons:\n\t1. Selection -> Opens the selection window\n\t2. Ts Diagram -> Currently unavailable\n\t3. ps Diagram -> Currently unavailable\n\t4.Data -> Opens a window that contains all the thermodynamic states.\n\t5.Help -> Opens this window");
         helpWindow->setTitleText("Thermodynamic States of Cycle");
         helpWindow->show();
 

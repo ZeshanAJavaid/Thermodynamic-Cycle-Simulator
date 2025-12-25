@@ -7,7 +7,7 @@ project(ThermodynamicSimulator)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Turn on Qt's magic automation
+# Turn on Qt's automation
 set(CMAKE_AUTOMOC ON) # Handles Signals/Slots
 set(CMAKE_AUTOUIC ON) # Handles .ui files
 set(CMAKE_AUTORCC ON) # Handles resources

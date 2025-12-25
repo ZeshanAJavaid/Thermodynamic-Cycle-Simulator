@@ -40,7 +40,7 @@ void MainWindow::OpenHelpWindow()
         // Open help window and set the appropriate messages
         HelpWindow* helpWindow = new HelpWindow();
         helpWindow->setAttribute(Qt::WA_DeleteOnClose);
-        helpWindow->setHelpText("This program simulates three basic cycles: \n\t1.Brayton -> Airplane Propulsion Systems \n\t2.Otto -> Small applications such as lawnmowers \n\t3.Diesel -> Diesel engines that power semi-trucks \n\nBegin Simulations -> To begin your simulation, Click the Begin button to go to the Cycle Selection page!");
+        helpWindow->setHelpText("This program simulates three basic cycles: \n\t1.Brayton -> Airplane Propulsion Systems \n\t2.Otto -> Small applications such as lawnmowers \n\t3.Diesel -> Diesel engines that power semi-trucks \n\nTo begin your simulation, Click the Begin button to go to the Cycle Selection page!");
         helpWindow->setTitleText("Welcome to Thermodynamic Simulator!");
         helpWindow->show();
 
