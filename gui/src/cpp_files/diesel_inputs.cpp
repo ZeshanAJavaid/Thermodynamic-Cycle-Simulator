@@ -12,6 +12,7 @@ DieselInputWindow::DieselInputWindow(QWidget* parent) : QMainWindow(parent), ui(
 {
     ui -> setupUi(this);
 
+    // Connect signal/slots 
     connect(ui->Begin_Button,&QPushButton::clicked,this,&DieselInputWindow::OpenPerformanceWindow);
     connect(ui->Back_Button,&QPushButton::clicked,this,&DieselInputWindow::OpenSelectionWindow);
     connect(ui->Help_Button,&QPushButton::clicked,this,&DieselInputWindow::OpenHelpWindow);
@@ -28,7 +29,7 @@ void DieselInputWindow::OpenPerformanceWindow()
 {
     QString temperature, pressure, compression_ratio, compression_eff, expansion_eff;
     double dTemperature, dPressure, dCompression_ratio, dCompression_eff, dExpansion_eff;
-    bool toDouble;
+    bool toDouble; // helps validate successful conversion from QString to Double
 
     temperature = ui->Temperature_Input->text();
     pressure = ui->Pressure_Input->text();
@@ -36,118 +37,106 @@ void DieselInputWindow::OpenPerformanceWindow()
     compression_eff = ui->Compression_eff_input->text();
     expansion_eff = ui->Expansion_eff_input->text();
 
+    // Define a lamda function that shows an error window
+    auto showErrorWindow = [this](QString title, QString errorText) {
+        
+        ErrorWindow* errorWindow = new ErrorWindow();
+        errorWindow->setAttribute(Qt::WA_DeleteOnClose);
+        errorWindow->setTitleText(title);
+        errorWindow->setErrorText(errorText);
+        errorWindow->show();
 
+        this->isErrorOpen = true;
+
+        connect(errorWindow, &QObject::destroyed, this, [this](){
+            this->isErrorOpen = false;
+        });
+    };
+
+    // Input Validations
     dTemperature = temperature.QString::toDouble(&toDouble);
     if(!toDouble)
     {
         if(!this->isErrorOpen)
         {
-            ErrorWindow* errorWindow = new ErrorWindow();
-            errorWindow->setAttribute(Qt::WA_DeleteOnClose);
-            errorWindow->setTitleText("Incorrect Input Type");
-            errorWindow->setErrorText("Incorrect Input for Temperature! Please enter a number!");
-            errorWindow->show();
-
-            this->isErrorOpen = true;
-
-            connect(errorWindow, &QObject::destroyed, this, [this](){
-                this->isErrorOpen = false;
-            });
-
+            showErrorWindow("Invalid Input!","Invalid input for Temperature! Please enter a number.");
             return;
         } 
+    }
+    else if(dTemperature > 500.0)
+    {
+        showErrorWindow("Unrealistic Input","Unrealisitc Temperature! Please try again!");
+        return;
     }
     dPressure = pressure.QString::toDouble(&toDouble);
     if(!toDouble)
     {
         if(!this->isErrorOpen)
         {
-            ErrorWindow* errorWindow = new ErrorWindow();
-            errorWindow->setAttribute(Qt::WA_DeleteOnClose);
-            errorWindow->setTitleText("Incorrect Input Type");
-            errorWindow->setErrorText("Incorrect Input for Pressure! Please enter a number!");
-            errorWindow->show();
-
-            this->isErrorOpen = true;
-
-            connect(errorWindow, &QObject::destroyed, this, [this](){
-                this->isErrorOpen = false;
-            });
-
+            showErrorWindow("Invalid Input!","Invalid input for Pressure! Please enter a number.");
             return;
         } 
+    }
+    else if(dPressure > 1000.0)
+    {
+        showErrorWindow("Unrealistic Input","Unrealisitc Pressure! Please try again!");
+        return;
     }
     dCompression_ratio = compression_ratio.QString::toDouble(&toDouble);
     if(!toDouble)
     {
-       if(!this->isErrorOpen)
+        if(!this->isErrorOpen)
         {
-            ErrorWindow* errorWindow = new ErrorWindow();
-            errorWindow->setAttribute(Qt::WA_DeleteOnClose);
-            errorWindow->setTitleText("Incorrect Input Type");
-            errorWindow->setErrorText("Incorrect Input for Compression Ratio! Please enter a number!");
-            errorWindow->show();
-
-            this->isErrorOpen = true;
-
-            connect(errorWindow, &QObject::destroyed, this, [this](){
-                this->isErrorOpen = false;
-            });
-
+            showErrorWindow("Invalid Input!","Invalid input for Compression Ratio! Please enter a number.");
             return;
         } 
+    }
+    else if(dCompression_ratio > 60.0)
+    {
+        showErrorWindow("Unrealistic Input","Unrealisitc Compression Ratio! Please try again!");
+        return;
     }
     dCompression_eff = compression_eff.QString::toDouble(&toDouble);
     if(!toDouble)
     {
-       if(!this->isErrorOpen)
+        if(!this->isErrorOpen)
         {
-            ErrorWindow* errorWindow = new ErrorWindow();
-            errorWindow->setAttribute(Qt::WA_DeleteOnClose);
-            errorWindow->setTitleText("Incorrect Input Type");
-            errorWindow->setErrorText("Incorrect Input for Compression Efficiency! Please enter a number!");
-            errorWindow->show();
-
-            this->isErrorOpen = true;
-
-            connect(errorWindow, &QObject::destroyed, this, [this](){
-                this->isErrorOpen = false;
-            });
-
+            showErrorWindow("Invalid Input!","Invalid input for Compression Efficiency! Please enter a number.");
             return;
-        } 
+        }  
+    }
+    else if(dCompression_eff > 100.0 || dCompression_eff < 0.0)
+    {
+        showErrorWindow("Unrealistic Input","Unrealisitc Compression Efficiency! Please try again!");
+        return;
     }
     dExpansion_eff = expansion_eff.QString::toDouble(&toDouble);
     if(!toDouble)
     {
         if(!this->isErrorOpen)
         {
-            ErrorWindow* errorWindow = new ErrorWindow();
-            errorWindow->setAttribute(Qt::WA_DeleteOnClose);
-            errorWindow->setTitleText("Incorrect Input Type");
-            errorWindow->setErrorText("Incorrect Input for Expansion Efficiency! Please enter a number!");
-            errorWindow->show();
-
-            this->isErrorOpen = true;
-
-            connect(errorWindow, &QObject::destroyed, this, [this](){
-                this->isErrorOpen = false;
-            });
-
+            showErrorWindow("Invalid Input!","Invalid input for Expansion Efficiency! Please enter a number.");
             return;
         } 
     }
+    else if(dExpansion_eff > 100.0 || dExpansion_eff < 0.0)
+    {
+        showErrorWindow("Unrealistic Input","Unrealisitc Expansion Efficiency! Please try again!");
+        return;
+    }
     else
     {
+        // Computation
         Computation* diesel = new Computation(Cycles(2),dPressure,dTemperature,dCompression_ratio,dCompression_eff,dExpansion_eff);
         diesel->compute();
         delete diesel;
     }   
     
-
+    // Open performance window
     PerformanceWindow* performanceWindow = new PerformanceWindow();
     performanceWindow->setAttribute(Qt::WA_DeleteOnClose);
 
+    // Open the performance window in the correct position
     QScreen *screen = QGuiApplication::primaryScreen();
     QRect screenGeometry = screen->availableGeometry();
     QRect windowGeometry = performanceWindow->frameGeometry();
@@ -155,15 +144,18 @@ void DieselInputWindow::OpenPerformanceWindow()
     performanceWindow->move(windowGeometry.topLeft());
     performanceWindow->show();
 
+    // Close current window
     this->close();
     this->deleteLater();
 }
 
 void DieselInputWindow::OpenSelectionWindow()
 {   
+    // Open Selection Window
     SelectionWindow* selections = new SelectionWindow();
     selections->setAttribute(Qt::WA_DeleteOnClose);
     
+    // Open the window in the correct position
     QScreen *screen = QGuiApplication::primaryScreen();
     QRect screenGeometry = screen->availableGeometry();
     QRect windowGeometry = selections->frameGeometry();
@@ -171,22 +163,25 @@ void DieselInputWindow::OpenSelectionWindow()
     selections->move(windowGeometry.topLeft());
     selections->show();
 
+    // Close current window
     this->close();
     this->deleteLater();
 }
 
 void DieselInputWindow::OpenHelpWindow()
 {
-    if(!this->isHelpOpen)
-    {
+    if(!this->isHelpOpen) // check if help window is already open
+    {   
+        // Open help window and set the appropriates messages
         HelpWindow* helpWindow = new HelpWindow();
         helpWindow->setAttribute(Qt::WA_DeleteOnClose);
-        helpWindow->setHelpText("Input Parameters:\n\t1. Temperature (Kelvins)\n\t2. Pressure (Kilo-Pascals)\n\t3. Compression Ratio (V1 / V2)\n\t4. Compression Isentropic Efficiency (%)\n\t5. Expansion Isentropic Efficiency (%)");
-        helpWindow->setTitleText("Otto Cycle Inputs");
+        helpWindow->setHelpText("Input Parameters:\n\t1. Temperature (Kelvins)\n\t2. Pressure (Kilo-Pascals)\n\t3. Compression Ratio (V1 / V2)\n\t4. Compression Isentropic Efficiency (%)\n\t5. Expansion Isentropic Efficiency (%)\n\nButtons:\n\t1. Back -> Returns to the selection page\n\t2. Begin -> Proceeds to the performance page.\n\t3. Help -> Opens this window.");
+        helpWindow->setTitleText("Diesel Cycle Inputs");
         helpWindow->show();
 
         this->isHelpOpen = true;
 
+        // lambda function to change the isHelpOpen variable once it closes
         connect(helpWindow, &QObject::destroyed, this, [this](){
             this->isHelpOpen = false;
         });

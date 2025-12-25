@@ -63,7 +63,7 @@ public:
         Close_Button->setFont(font1);
         Help_Label = new QLabel(centralwidget);
         Help_Label->setObjectName("Help_Label");
-        Help_Label->setGeometry(QRect(10, 80, 601, 181));
+        Help_Label->setGeometry(QRect(10, 80, 601, 221));
         QFont font2;
         font2.setFamilies({QString::fromUtf8("Fira Code Retina")});
         font2.setPointSize(12);

@@ -19,8 +19,8 @@ double AirProperties::get_gamma(double temp) const{
 }
 
 double AirProperties::get_enthalpy(double temp) const{
-       return temp > 1000 ? (((this->polynomial_consts_high.at(0) + this->polynomial_consts_high.at(1) * temp / 2 + this->polynomial_consts_high.at(2) * temp * temp / 3 + this->polynomial_consts_high.at(3) * temp * temp * temp / 4 + this->polynomial_consts_high.at(4) * temp * temp * temp * temp / 5 + this->polynomial_consts_high.at(5) / temp) * this->R * temp / (this->molar_mass))) // + this->get_cp(temp) * 259.55)
-                          : (((this->polynomial_consts_low.at(0) + this->polynomial_consts_low.at(1) * temp / 2 + this->polynomial_consts_low.at(2) * temp * temp / 3 + this->polynomial_consts_low.at(3) * temp * temp * temp / 4 + this->polynomial_consts_low.at(4) * temp * temp * temp * temp / 5 + this->polynomial_consts_low.at(5) / temp) * this->R * temp / (this->molar_mass))); // + this->get_cp(temp) * 301.236);
+       return temp > 1000 ? (((this->polynomial_consts_high.at(0) + this->polynomial_consts_high.at(1) * temp / 2 + this->polynomial_consts_high.at(2) * temp * temp / 3 + this->polynomial_consts_high.at(3) * temp * temp * temp / 4 + this->polynomial_consts_high.at(4) * temp * temp * temp * temp / 5 + this->polynomial_consts_high.at(5) / temp) * this->R * temp / (this->molar_mass)) + this->get_cp(temp) * 259.55)
+                          : (((this->polynomial_consts_low.at(0) + this->polynomial_consts_low.at(1) * temp / 2 + this->polynomial_consts_low.at(2) * temp * temp / 3 + this->polynomial_consts_low.at(3) * temp * temp * temp / 4 + this->polynomial_consts_low.at(4) * temp * temp * temp * temp / 5 + this->polynomial_consts_low.at(5) / temp) * this->R * temp / (this->molar_mass)) + this->get_cp(temp) * 301.236);
 }
 
 double AirProperties::get_internal_energy(double temp) const{

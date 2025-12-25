@@ -63,7 +63,7 @@ color: rgb(255,255,255);
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="Quit_Button">
+   <widget class="QPushButton" name="Selection_Button">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -83,7 +83,7 @@ color: rgb(255,255,255);
      <string notr="true">color: rgb(255, 255, 255); background-color: rgb(95, 16, 3)</string>
     </property>
     <property name="text">
-     <string>Quit</string>
+     <string>Selection</string>
     </property>
    </widget>
    <widget class="QPushButton" name="TsDiagram_Button">

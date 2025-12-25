@@ -23,7 +23,7 @@ class Ui_PerformanceWindow
 public:
     QWidget *centralwidget;
     QLabel *Title;
-    QPushButton *Quit_Button;
+    QPushButton *Selection_Button;
     QPushButton *TsDiagram_Button;
     QPushButton *pvDiagram_Button;
     QPushButton *Data_Button;
@@ -68,15 +68,15 @@ public:
         Title->setFont(font);
         Title->setStyleSheet(QString::fromUtf8("color: rgb(255,255,255);"));
         Title->setAlignment(Qt::AlignCenter);
-        Quit_Button = new QPushButton(centralwidget);
-        Quit_Button->setObjectName("Quit_Button");
-        Quit_Button->setGeometry(QRect(20, 560, 141, 51));
+        Selection_Button = new QPushButton(centralwidget);
+        Selection_Button->setObjectName("Selection_Button");
+        Selection_Button->setGeometry(QRect(20, 560, 141, 51));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Fira Code SemiBold")});
         font1.setPointSize(16);
         font1.setBold(true);
-        Quit_Button->setFont(font1);
-        Quit_Button->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255); background-color: rgb(95, 16, 3)"));
+        Selection_Button->setFont(font1);
+        Selection_Button->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255); background-color: rgb(95, 16, 3)"));
         TsDiagram_Button = new QPushButton(centralwidget);
         TsDiagram_Button->setObjectName("TsDiagram_Button");
         TsDiagram_Button->setGeometry(QRect(220, 560, 141, 51));
@@ -196,7 +196,7 @@ public:
     {
         PerformanceWindow->setWindowTitle(QCoreApplication::translate("PerformanceWindow", "Thermodynamic Simulator", nullptr));
         Title->setText(QCoreApplication::translate("PerformanceWindow", "Performance of Cycle:", nullptr));
-        Quit_Button->setText(QCoreApplication::translate("PerformanceWindow", "Quit", nullptr));
+        Selection_Button->setText(QCoreApplication::translate("PerformanceWindow", "Selection", nullptr));
         TsDiagram_Button->setText(QCoreApplication::translate("PerformanceWindow", "Ts Diagram", nullptr));
         pvDiagram_Button->setText(QCoreApplication::translate("PerformanceWindow", "pv Diagram", nullptr));
         Data_Button->setText(QCoreApplication::translate("PerformanceWindow", "Data", nullptr));

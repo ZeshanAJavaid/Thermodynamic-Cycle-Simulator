@@ -26,16 +26,31 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_SelectionWindow_t {
-    uint offsetsAndSizes[2];
+    uint offsetsAndSizes[12];
     char stringdata0[16];
+    char stringdata1[18];
+    char stringdata2[1];
+    char stringdata3[15];
+    char stringdata4[17];
+    char stringdata5[15];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_SelectionWindow_t::offsetsAndSizes) + ofs), len 
 Q_CONSTINIT static const qt_meta_stringdata_SelectionWindow_t qt_meta_stringdata_SelectionWindow = {
     {
-        QT_MOC_LITERAL(0, 15)   // "SelectionWindow"
+        QT_MOC_LITERAL(0, 15),  // "SelectionWindow"
+        QT_MOC_LITERAL(16, 17),  // "OpenBraytonInputs"
+        QT_MOC_LITERAL(34, 0),  // ""
+        QT_MOC_LITERAL(35, 14),  // "OpenOttoInputs"
+        QT_MOC_LITERAL(50, 16),  // "OpenDieselInputs"
+        QT_MOC_LITERAL(67, 14)   // "OpenHelpWindow"
     },
-    "SelectionWindow"
+    "SelectionWindow",
+    "OpenBraytonInputs",
+    "",
+    "OpenOttoInputs",
+    "OpenDieselInputs",
+    "OpenHelpWindow"
 };
 #undef QT_MOC_LITERAL
 } // unnamed namespace
@@ -46,12 +61,24 @@ Q_CONSTINIT static const uint qt_meta_data_SelectionWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
+
+ // slots: name, argc, parameters, tag, flags, initial metatype offsets
+       1,    0,   38,    2, 0x08,    1 /* Private */,
+       3,    0,   39,    2, 0x08,    2 /* Private */,
+       4,    0,   40,    2, 0x08,    3 /* Private */,
+       5,    0,   41,    2, 0x08,    4 /* Private */,
+
+ // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -64,16 +91,32 @@ Q_CONSTINIT const QMetaObject SelectionWindow::staticMetaObject = { {
     nullptr,
     qt_incomplete_metaTypeArray<qt_meta_stringdata_SelectionWindow_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<SelectionWindow, std::true_type>
+        QtPrivate::TypeAndForceComplete<SelectionWindow, std::true_type>,
+        // method 'OpenBraytonInputs'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'OpenOttoInputs'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'OpenDieselInputs'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'OpenHelpWindow'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
 
 void SelectionWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    (void)_o;
-    (void)_id;
-    (void)_c;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<SelectionWindow *>(_o);
+        (void)_t;
+        switch (_id) {
+        case 0: _t->OpenBraytonInputs(); break;
+        case 1: _t->OpenOttoInputs(); break;
+        case 2: _t->OpenDieselInputs(); break;
+        case 3: _t->OpenHelpWindow(); break;
+        default: ;
+        }
+    }
     (void)_a;
 }
 
@@ -93,6 +136,17 @@ void *SelectionWindow::qt_metacast(const char *_clname)
 int SelectionWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMainWindow::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 4)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 4;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 4)
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+        _id -= 4;
+    }
     return _id;
 }
 QT_WARNING_POP

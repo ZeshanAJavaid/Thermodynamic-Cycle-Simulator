@@ -370,6 +370,7 @@ CMakeFiles/sim.dir/gui/src/cpp_files/performance.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractitemmodel.h \
  /mnt/d/Personal-Projects/Professional-Projects/Thermodynamic-Cycle-Simulator/gui/src/cpp_files/../headers/error_window.h \
  /mnt/d/Personal-Projects/Professional-Projects/Thermodynamic-Cycle-Simulator/gui/src/cpp_files/../headers/help_window.h \
+ /mnt/d/Personal-Projects/Professional-Projects/Thermodynamic-Cycle-Simulator/gui/src/cpp_files/../headers/selection.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/QScreen \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qscreen.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
