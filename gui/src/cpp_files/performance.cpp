@@ -109,7 +109,7 @@ void PerformanceWindow::OpenHelpWindow()
         // Open help window and set appropriate messages
         HelpWindow* helpWindow = new HelpWindow();
         helpWindow->setAttribute(Qt::WA_DeleteOnClose);
-        helpWindow->setHelpText("The following attributes are shown:\n\t1. Efficiency -> W_cycle / Q_in or 1 - Q_out / Q_in\n\t2. Work of Cycle -> W_cycle = W_comp - W_expan\n\t3. Work of Compression/Compressor -> W_comp = h2 - h1\n\t4.  Work of Expansion/Turbine -> W_exp/turbine = h3 - h4\n\t5. Heat in -> Q_in = h3 - h2\n\t6. Heat out -> Q_out = h4 - h1\n\nButtons:\n\t1. Selection -> Opens the selection window\n\t2. Ts Diagram -> Currently unavailable\n\t3. ps Diagram -> Currently unavailable\n\t4.Data -> Opens a window that contains all the thermodynamic states.\n\t5.Help -> Opens this window");
+        helpWindow->setHelpText("The following attributes are shown:\n\t1. Efficiency -> W_cycle / Q_in or 1 - Q_out / Q_in\n\t2. Work of Cycle -> W_cycle = W_comp - W_expan\n\t3. Work of Compression/Compressor -> W_comp = h2 - h1\n\t4.  Work of Expansion/Turbine -> W_exp/turbine = h3 - h4\n\t5. Heat in -> Q_in = h3 - h2\n\t6. Heat out -> Q_out = h4 - h1\n\nButtons:\n\t1. Selection -> Opens the selection window\n\t2. Ts Diagram -> Currently unavailable\n\t3. pv Diagram -> Currently unavailable\n\t4. Data -> Opens a window that contains all the thermodynamic states.\n\t5.Help -> Opens this window");
         helpWindow->setTitleText("Thermodynamic Performance of Cycle");
         helpWindow->show();
 

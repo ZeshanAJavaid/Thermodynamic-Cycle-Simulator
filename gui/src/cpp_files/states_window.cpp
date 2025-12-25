@@ -12,6 +12,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
+#include <QHeaderView>
 
 
 
@@ -30,7 +31,8 @@ StateWindow::StateWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::Stat
     // Loads the csv data into the QTableView
     loadCsvData(QString::fromStdString(std::string(PROJECT_PATH) + "/output/cycle.csv"));
     ui->States->setModel(csvModel);
-    ui->States->resizeColumnsToContents();
+    ui->States->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->States->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
 
 void StateWindow::loadCsvData(const QString &filePath)
@@ -126,7 +128,7 @@ void StateWindow::OpenHelpWindow()
         // Opens help window and sets the appropriate messages
         HelpWindow* helpWindow = new HelpWindow();
         helpWindow->setAttribute(Qt::WA_DeleteOnClose);
-        helpWindow->setHelpText("Following Proccess:\n\t1. State 1 -> State 2: Compression \n\t2. State 2 -> State3: Heat Addition\n\t3. State 3 -> State 4: Expansion\n\t5. State 4 -> State 1: Heat Rejection\n\nButtons:\n\t1. Selection -> Opens the selection window\n\t2. Ts Diagram -> Currently unavailable\n\t3. ps Diagram -> Currently unavailable\n\t4.Data -> Opens a window that contains all the thermodynamic states.\n\t5.Help -> Opens this window");
+        helpWindow->setHelpText("Following Proccess:\n\t1. State 1 -> State 2: Compression \n\t2. State 2 -> State3: Heat Addition\n\t3. State 3 -> State 4: Expansion\n\t5. State 4 -> State 1: Heat Rejection\n\nButtons:\n\t1. Selection -> Opens the selection window\n\t2. Ts Diagram -> Currently unavailable\n\t3. pv Diagram -> Currently unavailable\n\t4. Performance -> Opens a window that contains all the performance characteristics of the cycle.\n\t5.Help -> Opens this window");
         helpWindow->setTitleText("Thermodynamic States of Cycle");
         helpWindow->show();
 

@@ -80,7 +80,7 @@ check_dependencies() {
         echo " C++ Compiler found."
     fi
 
-    sleep 1
+    sleep 0.5
 
     # 2. CHECK FOR CMAKE
     if ! command -v cmake &> /dev/null; then
@@ -90,7 +90,7 @@ check_dependencies() {
         echo " CMake found."
     fi
 
-    sleep 1
+    sleep 0.5
 
     # 3. CHECK FOR QT6
     # We look for qmake6 or qmake.
@@ -105,7 +105,7 @@ check_dependencies() {
         fi
     fi
 
-    sleep 1
+    sleep 0.5
 
     if [ "$QT_FOUND" = false ]; then
         # If user defined a custom path manually in the script, we skip install
@@ -121,7 +121,7 @@ check_dependencies() {
         echo " Qt6 found."
     fi
 
-    sleep 1
+    sleep 0.5
 }
 
 # ==========================================
@@ -144,7 +144,7 @@ fi
 # 3. Navigate to Build Directory
 cd "$BUILD_DIR"
 
-sleep 1
+sleep 0.5
 
 # 4. Configure (CMake)
 # We add a check here just in case CMake fails even after installation
@@ -158,7 +158,7 @@ if ! cmake -DCMAKE_BUILD_TYPE=$BUILD_TYPE ..; then
     exit 1
 fi
 
-sleep 1
+sleep 0.5
 
 # 5. Compile
 echo
@@ -166,7 +166,7 @@ echo "--- Compiling... ---"
 echo
 cmake --build . --parallel
 
-sleep 1
+sleep 0.5
 
 export QT_QPA_PLATFORM=xcb
 

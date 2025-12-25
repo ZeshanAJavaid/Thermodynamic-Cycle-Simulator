@@ -66,14 +66,17 @@ color: rgb(255,255,255);
    <widget class="QTableView" name="States">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>160</y>
+      <x>40</x>
+      <y>130</y>
       <width>941</width>
-      <height>271</height>
+      <height>311</height>
      </rect>
     </property>
     <property name="sizeAdjustPolicy">
      <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+    </property>
+    <property name="autoScroll">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="Selection_Button">

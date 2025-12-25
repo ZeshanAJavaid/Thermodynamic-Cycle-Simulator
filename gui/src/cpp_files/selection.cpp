@@ -87,7 +87,7 @@ void SelectionWindow::OpenHelpWindow()
         // Opens help window and sets the appropriate messages
         HelpWindow* helpWindow = new HelpWindow();
         helpWindow->setAttribute(Qt::WA_DeleteOnClose);
-        helpWindow->setHelpText("Buttons:\n\t1. Brayton -> This button opens the brayton cycle input window\n\t2. Otto -> This button opens the otto cycle input window\n\t3. Diesel -> This button opens the diesel cycle input window");
+        helpWindow->setHelpText("Buttons:\n\t1. Brayton -> Opens the brayton cycle input window\n\t2. Otto -> Opens the otto cycle input window\n\t3. Diesel -> Opens the diesel cycle input window");
         helpWindow->setTitleText("Selection Window");
         helpWindow->show();
 
