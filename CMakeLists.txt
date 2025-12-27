@@ -12,7 +12,7 @@ set(CMAKE_AUTOMOC ON) # Handles Signals/Slots
 set(CMAKE_AUTOUIC ON) # Handles .ui files
 set(CMAKE_AUTORCC ON) # Handles resources
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets) # Find the Qt library packages
+find_package(Qt6 REQUIRED COMPONENTS Widgets Charts) # Find the Qt library packages
 
 # Define your source files
 file(GLOB_RECURSE SOURCES 
@@ -51,4 +51,4 @@ set_property(TARGET sim APPEND PROPERTY AUTOUIC_SEARCH_PATHS "${CMAKE_CURRENT_SO
 
 target_compile_definitions(sim PRIVATE PROJECT_PATH="${CMAKE_CURRENT_SOURCE_DIR}") # Define a Macro containing the root directory of this project
 
-target_link_libraries(sim PRIVATE Qt6::Widgets) # Link excecutable to the Qt6 library
+target_link_libraries(sim PRIVATE Qt6::Widgets Qt6::Charts) # Link excecutable to the Qt6 library

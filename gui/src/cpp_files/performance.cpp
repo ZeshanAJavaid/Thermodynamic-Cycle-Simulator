@@ -1,7 +1,6 @@
 #include "../headers/performance.h"
 #include "ui_performance_window.h"
-// #include "../headers/TsDiagram.h"
-// #include "../headers/PvDiagram.h"
+#include "../headers/diagram_generation.h"
 #include "../headers/states_window.h"
 #include "../headers/error_window.h"
 #include "../headers/help_window.h"
@@ -23,13 +22,15 @@ PerformanceWindow::PerformanceWindow(QWidget* parent) : QMainWindow(parent), ui(
 
     // Connect signal/slots
     connect(ui->Selection_Button, &QPushButton::clicked, this, &PerformanceWindow::goBackToSelection); 
-    // connect(ui->TsDiagram_Button, &QPushButton::clicked, this, &PerformanceWindow::OpenTsDiagram);
-    // connect(ui->pvDiagram_Button, &QPushButton::clicked, this, &PerformanceWindow::OpenPvDiagram);
+    connect(ui->TsDiagram_Button, &QPushButton::clicked, this, &PerformanceWindow::OpenTsDiagram);
+    connect(ui->pvDiagram_Button, &QPushButton::clicked, this, &PerformanceWindow::OpenPvDiagram);
     connect(ui->Data_Button, &QPushButton::clicked, this, &PerformanceWindow::OpenThermoData);
     connect(ui->Help_Button, &QPushButton::clicked, this, &PerformanceWindow::OpenHelpWindow);
 
     // Populate the outputs
-    std::ifstream ifs(std::string(PROJECT_PATH) +"/output/performance.csv");
+    this->performancefileName = std::string(PROJECT_PATH) + "/output/performance.csv";
+    this->statefileName = std::string(PROJECT_PATH) + "/output/cycle.csv";
+    std::ifstream ifs(this->performancefileName);
     if(!ifs.is_open())
     {
         ErrorWindow* errorWindow = new ErrorWindow();
@@ -121,16 +122,16 @@ void PerformanceWindow::OpenHelpWindow()
         });
     }
 }   
-/** 
- * @todo implement the Ts and Pv Diagram functions
- * 
+
+ 
 void PerformanceWindow::OpenTsDiagram()
 {
-    
+    TsDataPoints* tsDiagram = new TsDataPoints(this->statefileName);
+    tsDiagram->graphTsDiagram();
 }
 
 void PerformanceWindow::OpenPvDiagram()
 {
-    
-}
-*/
+    PvDataPoints* pvDiagram = new PvDataPoints(this->statefileName);
+    pvDiagram->graphPvDiagram();
+}   

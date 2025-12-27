@@ -66,10 +66,10 @@ color: rgb(255,255,255);
    <widget class="QTableView" name="States">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>130</y>
-      <width>941</width>
-      <height>311</height>
+      <x>10</x>
+      <y>90</y>
+      <width>991</width>
+      <height>451</height>
      </rect>
     </property>
     <property name="sizeAdjustPolicy">

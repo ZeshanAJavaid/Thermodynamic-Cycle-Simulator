@@ -58,6 +58,7 @@ class StateWindow : public QMainWindow
         Ui::StateWindow* ui;
         QStandardItemModel* csvModel;
         bool isHelpOpen;
+        std::string fileName;
 
     public: 
 

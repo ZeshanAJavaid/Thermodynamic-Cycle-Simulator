@@ -1,7 +1,6 @@
 #include "../headers/states_window.h"
 #include "ui_states_window.h"
-// #include "../headers/TsDiagram.h"
-// #include "../headers/PvDiagram.h"
+#include "../headers/diagram_generation.h"
 #include "../headers/performance.h"
 #include "../headers/help_window.h"
 #include "../headers/error_window.h"
@@ -23,13 +22,15 @@ StateWindow::StateWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::Stat
 
     // Setup signals/slots
     connect(ui->Selection_Button, &QPushButton::clicked, this, &StateWindow::goBackToSelection); 
-    // connect(ui->TsDiagram_Button, &QPushButton::clicked, this, &PerformanceWindow::OpenTsDiagram);
-    // connect(ui->pvDiagram_Button, &QPushButton::clicked, this, &PerformanceWindow::OpenPvDiagram);
+    connect(ui->TsDiagram_Button, &QPushButton::clicked, this, &StateWindow::OpenTsDiagram);
+    connect(ui->pvDiagram_Button, &QPushButton::clicked, this, &StateWindow::OpenPvDiagram);
     connect(ui->Performance_Button, &QPushButton::clicked, this, &StateWindow::OpenThermoData);
     connect(ui->Help_Button, &QPushButton::clicked, this, &StateWindow::OpenHelpWindow);
 
     // Loads the csv data into the QTableView
-    loadCsvData(QString::fromStdString(std::string(PROJECT_PATH) + "/output/cycle.csv"));
+    this->fileName = std::string(PROJECT_PATH) + "/output/cycle.csv";
+    loadCsvData(QString::fromStdString(fileName));
+
     ui->States->setModel(csvModel);
     ui->States->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->States->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -141,16 +142,14 @@ void StateWindow::OpenHelpWindow()
     }
 }   
 
-/**
- * @todo Implement the Ts and Pv diagram functions 
- * 
-void PerformanceWindow::OpenTsDiagram()
+void StateWindow::OpenTsDiagram()
 {
-    
+    TsDataPoints* tsDiagram = new TsDataPoints(this->fileName);
+    tsDiagram->graphTsDiagram();
 }
 
-void PerformanceWindow::OpenPvDiagram()
+void StateWindow::OpenPvDiagram()
 {
-    
-}
- */
+    PvDataPoints* pvDiagram = new PvDataPoints(this->fileName);
+    pvDiagram->graphPvDiagram();
+}   

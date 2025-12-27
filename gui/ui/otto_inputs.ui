@@ -444,6 +444,16 @@ color: rgb(255,255,255);
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>initial_temperature_input</tabstop>
+  <tabstop>Initial_pressure_input</tabstop>
+  <tabstop>Ratio_Input</tabstop>
+  <tabstop>Compression_eff_input</tabstop>
+  <tabstop>Expansion_eff_input</tabstop>
+  <tabstop>Help_Button</tabstop>
+  <tabstop>Back_Button</tabstop>
+  <tabstop>Begin_Button</tabstop>
+ </tabstops>
  <resources>
   <include location="../../images.qrc"/>
  </resources>
