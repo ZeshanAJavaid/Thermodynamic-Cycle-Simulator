@@ -134,8 +134,6 @@ check_dependencies() {
         echo " [OK] CMake found"
     fi
 
-    sleep 0.5
-
     # 3. CHECK QT MODULES LOOP
     echo "--- Checking Qt6 Libraries ---"
     

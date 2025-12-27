@@ -151,6 +151,7 @@ void PvDataPoints::graphPvDiagram()
     QChart *chart = new QChart();
     chart->addSeries(series);
     chart->setTitle("pv Diagram");
+    chart->legend()->hide();
 
     QValueAxis *axisX = new QValueAxis();
     axisX->setTitleText("specific volume (m^3 / kg)");
@@ -258,9 +259,27 @@ void TsDataPoints::pointGeneration()
     double c1 = (s3 - s2) / std::log(t3 / t2);
     double c2 = (s1 - s4) / std::log(t1 / t4);
 
+    int index = 1;
+
+    // Compression
+    if(s2 != s1) // check if NOT isentropic
+    {
+        double c_compress = (s2 - s1) / std::log(t2 / t1); // Although there is a pressure or volume term. I am using approximations to decrease complexity.
+
+        double step = (t2 - t1) / 30.0;
+
+        for(double temp = t1 + step; temp < t2; temp += step)
+        {
+            // s = s_o + c ln (temp / t_o)
+            this->tsDataPoints.insert(tsDataPoints.begin() + index, TsDataPoint{temp, s1 + c_compress*std::log(temp / t1)});
+            index++;
+        }
+    }
+
+    // Heat In
     double step = (t3 - t2) / 30.0;
     
-    int index = 2;
+    index++;
 
     for(double temp = t2 + step; temp < t3; temp += step)
     {
@@ -269,6 +288,24 @@ void TsDataPoints::pointGeneration()
         index++;
     }
 
+    index++;
+
+    // Expansion
+    if(s3 != s4) // check if NOT isentropic
+    {
+        double c_expan = (s4 - s3) / std::log(t4 / t3); // Although there is a pressure or volume term. I am using approximations to decrease complexity.
+
+        double step = (t4 - t3) / 30.0;
+
+        for(double temp = t3 + step; temp < t4; temp += step)
+        {
+        // s = s_o + c ln (temp / t_o)
+        this->tsDataPoints.insert(tsDataPoints.begin() + index, TsDataPoint{temp, s3 + c_expan*std::log(temp / t3)});
+        index++;
+        }
+    }
+
+    // Heat out
     TsDataPoint lastPoint;
     lastPoint = tsDataPoints.at(tsDataPoints.size() - 1);
     this->tsDataPoints.pop_back();
@@ -307,6 +344,7 @@ void TsDataPoints::graphTsDiagram()
     QChart *chart = new QChart();
     chart->addSeries(series);
     chart->setTitle("Ts Diagram");
+    chart->legend()->hide();
 
     // 2. Define Axes with calculated ranges
     QValueAxis *axisX = new QValueAxis();
