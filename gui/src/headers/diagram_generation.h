@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
+#include <QMainWindow>
 
 /**
  * @brief Struct to contain all the pv data points
@@ -52,7 +53,7 @@ class PvDataPoints
          * @brief Graphs pv Diagram
          * @return displays a window with the associated pv diagram
          */
-        void graphPvDiagram();
+        QMainWindow* graphPvDiagram();
         
 };
 
@@ -90,5 +91,5 @@ class TsDataPoints
          * @brief Graphs Ts Diagram
          * @return displays a window with the associated ts diagram
          */
-        void graphTsDiagram();
+        QMainWindow* graphTsDiagram();
 };

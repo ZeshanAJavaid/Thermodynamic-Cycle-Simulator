@@ -129,7 +129,7 @@ void PvDataPoints::pointGeneration()
     this->pvDataPoints.push_back(finalPoint);
 }
 
-void PvDataPoints::graphPvDiagram()
+QMainWindow *PvDataPoints::graphPvDiagram()
 {
     QLineSeries *series = new QLineSeries();
 
@@ -181,6 +181,8 @@ void PvDataPoints::graphPvDiagram()
     diagram->setCentralWidget(chartView);
     diagram->resize(1080, 720);
     diagram->show();
+
+    return diagram;
 }   
 
 
@@ -319,7 +321,7 @@ void TsDataPoints::pointGeneration()
     this->tsDataPoints.push_back(lastPoint);
 }
 
-void TsDataPoints::graphTsDiagram()
+QMainWindow *TsDataPoints::graphTsDiagram()
 {
     // 1. Create Series
     QLineSeries *series = new QLineSeries();
@@ -377,4 +379,6 @@ void TsDataPoints::graphTsDiagram()
     diagram->setAttribute(Qt::WA_DeleteOnClose);
     diagram->resize(1080, 720);
     diagram->show();
+
+    return diagram;
 }

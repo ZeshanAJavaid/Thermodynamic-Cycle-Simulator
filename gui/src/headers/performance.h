@@ -55,7 +55,7 @@ class PerformanceWindow : public QMainWindow
 
         // Define neccessary Variables
         Ui::PerformanceWindow* ui;
-        bool isHelpOpen;
+        bool isHelpOpen, isPvDiagramOpen, isTsDiagramOpen;
         std::string performancefileName,statefileName;
 
     public: 

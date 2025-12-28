@@ -57,7 +57,7 @@ class StateWindow : public QMainWindow
         // Define neccessary variables
         Ui::StateWindow* ui;
         QStandardItemModel* csvModel;
-        bool isHelpOpen;
+        bool isHelpOpen, isPvDiagramOpen, isTsDiagramOpen;
         std::string fileName;
 
     public: 

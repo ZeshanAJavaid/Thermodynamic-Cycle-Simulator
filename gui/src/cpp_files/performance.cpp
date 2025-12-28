@@ -126,12 +126,29 @@ void PerformanceWindow::OpenHelpWindow()
  
 void PerformanceWindow::OpenTsDiagram()
 {
-    TsDataPoints* tsDiagram = new TsDataPoints(this->statefileName);
-    tsDiagram->graphTsDiagram();
+    if(!this->isTsDiagramOpen)
+    {
+        TsDataPoints* tsDiagram = new TsDataPoints(this->statefileName);
+        QMainWindow* tsWindow = tsDiagram->graphTsDiagram();
+
+        this->isTsDiagramOpen = true;
+        connect(tsWindow, &QObject::destroyed, this, [this](){
+            this->isTsDiagramOpen = false;
+        });
+    }
+    
 }
 
 void PerformanceWindow::OpenPvDiagram()
 {
-    PvDataPoints* pvDiagram = new PvDataPoints(this->statefileName);
-    pvDiagram->graphPvDiagram();
+    if(!this->isPvDiagramOpen)
+    {
+        PvDataPoints* pvDiagram = new PvDataPoints(this->statefileName);
+        QMainWindow* pvWindow = pvDiagram->graphPvDiagram();
+
+        this->isPvDiagramOpen = true;
+        connect(pvWindow, &QObject::destroyed, this, [this](){
+            this->isPvDiagramOpen = false;
+        });
+    }
 }   

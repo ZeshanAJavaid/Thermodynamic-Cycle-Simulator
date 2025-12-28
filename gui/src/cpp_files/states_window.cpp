@@ -144,12 +144,29 @@ void StateWindow::OpenHelpWindow()
 
 void StateWindow::OpenTsDiagram()
 {
-    TsDataPoints* tsDiagram = new TsDataPoints(this->fileName);
-    tsDiagram->graphTsDiagram();
+    if(!this->isTsDiagramOpen)
+    {
+        TsDataPoints* tsDiagram = new TsDataPoints(this->fileName);
+        QMainWindow* tsWindow = tsDiagram->graphTsDiagram();
+
+        this->isTsDiagramOpen = true;    
+        connect(tsWindow, &QObject::destroyed, this, [this](){
+            this->isTsDiagramOpen = false;
+        });
+    }
+    
 }
 
 void StateWindow::OpenPvDiagram()
 {
-    PvDataPoints* pvDiagram = new PvDataPoints(this->fileName);
-    pvDiagram->graphPvDiagram();
+    if(!this->isPvDiagramOpen)
+    {
+        PvDataPoints* pvDiagram = new PvDataPoints(this->fileName);
+        QMainWindow* pvWindow = pvDiagram->graphPvDiagram();
+        
+        this->isPvDiagramOpen = true;
+        connect(pvWindow, &QObject::destroyed, this, [this](){
+        this->isPvDiagramOpen = false;
+        });
+    }
 }   

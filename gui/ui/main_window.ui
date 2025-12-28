@@ -70,8 +70,8 @@
    <widget class="QPushButton" name="Begin_Button">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>500</y>
+      <x>340</x>
+      <y>560</y>
       <width>141</width>
       <height>51</height>
      </rect>
@@ -93,7 +93,7 @@
    <widget class="QPushButton" name="Help_Button">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>560</x>
       <y>560</y>
       <width>141</width>
       <height>51</height>
@@ -116,10 +116,10 @@
    <widget class="QLabel" name="entryImage">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>90</y>
-      <width>1001</width>
-      <height>371</height>
+      <x>30</x>
+      <y>80</y>
+      <width>961</width>
+      <height>461</height>
      </rect>
     </property>
     <property name="text">
