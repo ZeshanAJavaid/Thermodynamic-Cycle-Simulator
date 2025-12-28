@@ -61,70 +61,13 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="Brayton_Image">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>80</y>
-      <width>311</width>
-      <height>281</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../../images.qrc">:/gui/graphics/brayton_cycle.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Diesel_Image">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>80</y>
-      <width>341</width>
-      <height>281</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../../images.qrc">:/gui/graphics/diesel_cycle.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Otto_Image">
-    <property name="geometry">
-     <rect>
-      <x>700</x>
-      <y>80</y>
-      <width>311</width>
-      <height>281</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../../images.qrc">:/gui/graphics/otto_cycle.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QPushButton" name="Brayton_Button">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>420</y>
-      <width>141</width>
-      <height>51</height>
+      <x>650</x>
+      <y>130</y>
+      <width>161</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
@@ -144,10 +87,10 @@
    <widget class="QPushButton" name="Diesel_Button">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>420</y>
-      <width>141</width>
-      <height>51</height>
+      <x>650</x>
+      <y>510</y>
+      <width>161</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
@@ -167,10 +110,10 @@
    <widget class="QPushButton" name="Otto_Button">
     <property name="geometry">
      <rect>
-      <x>800</x>
-      <y>420</y>
-      <width>141</width>
-      <height>51</height>
+      <x>650</x>
+      <y>320</y>
+      <width>161</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
@@ -190,10 +133,10 @@
    <widget class="QPushButton" name="Help_Button">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>550</y>
-      <width>141</width>
-      <height>51</height>
+      <x>850</x>
+      <y>320</y>
+      <width>161</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
@@ -211,6 +154,63 @@
     </property>
     <property name="text">
      <string>Help</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Otto_Image">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>260</y>
+      <width>621</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../../images.qrc">:/gui/graphics/otto_cycle.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Diesel_Image">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>440</y>
+      <width>621</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../../images.qrc">:/gui/graphics/diesel_cycle.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Otto_Image_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>621</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../../images.qrc">:/gui/graphics/brayton_cycle.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

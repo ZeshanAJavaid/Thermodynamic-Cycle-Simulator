@@ -1,8 +1,15 @@
-<!DOCTYPE RCC>
-<RCC version="1.0">
-    <qresource prefix="/">
-        <file>gui/graphics/brayton_cycle.png</file>
-        <file>gui/graphics/diesel_cycle.png</file>
-        <file>gui/graphics/otto_cycle.png</file>
-    </qresource>
+<RCC>
+  <qresource prefix="/">
+    <file>gui/graphics/otto_image.png</file>
+    <file>gui/graphics/otto_cycle.png</file>
+    <file>gui/graphics/entry_window_image.png</file>
+    <file>gui/graphics/diesel_image.png</file>
+    <file>gui/graphics/diesel_cycle.png</file>
+    <file>gui/graphics/brayton_image.png</file>
+    <file>gui/graphics/brayton_cycle.png</file>
+    <file>gui/graphics/entry_window_image.png</file>
+    <file>gui/graphics/brayton_cycle.png</file>
+    <file>gui/graphics/diesel_cycle.png</file>
+    <file>gui/graphics/otto_cycle.png</file>
+  </qresource>
 </RCC>

@@ -71,7 +71,7 @@
     <property name="geometry">
      <rect>
       <x>440</x>
-      <y>480</y>
+      <y>500</y>
       <width>141</width>
       <height>51</height>
      </rect>
@@ -90,68 +90,11 @@
      <string>Begin</string>
     </property>
    </widget>
-   <widget class="QLabel" name="Brayton_Image">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>90</y>
-      <width>311</width>
-      <height>281</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../../images.qrc">:/gui/graphics/brayton_cycle.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Otto_Image">
-    <property name="geometry">
-     <rect>
-      <x>700</x>
-      <y>90</y>
-      <width>311</width>
-      <height>281</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../../images.qrc">:/gui/graphics/otto_cycle.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Diesel_Image">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>90</y>
-      <width>341</width>
-      <height>281</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../../images.qrc">:/gui/graphics/diesel_cycle.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QPushButton" name="Help_Button">
     <property name="geometry">
      <rect>
       <x>440</x>
-      <y>540</y>
+      <y>560</y>
       <width>141</width>
       <height>51</height>
      </rect>
@@ -168,6 +111,25 @@
     </property>
     <property name="text">
      <string>Help</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="entryImage">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>1001</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../../images.qrc">:/gui/graphics/entry_window_image.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
