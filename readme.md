@@ -1,23 +1,64 @@
-# Thermodynamic Simulator 
+# Thermodynamic Cycle Simulator 🚀
 
-This project was created because I failed my aerthormodynamics final badly. After failing my first ever exam in college, I wanted to learn the topics I wasn't able to master at that time. As such, I started this project to ensure that I understand the topics while gaining more experience in software development.
+> **"When getting an 'A' isn't enough: Bridging the gap between grades and understanding."**
 
-## Thermodynamic Choices
+## 📖 Background
+After finishing my final exam for **AERO 212: Introduction to Aerothermodynamics** at Texas A&M University, I had a realization. Even though I secured an 'A' in the course, I felt a disconnect between the grade on paper and my actual grasp of thermodynamics during the exam.
 
-As you may have noticed, this project only takes into account of 3 cycles: Brayton, Otto, and Diesel. The reason for this is due to the fact that these cycles do not have any phase changes. This allows for the usage of ideal standard assumptions and the associated methods of solving for various different thermodynamic proccesses. 
+I didn't want to just pass; I wanted to master the material. I decided to turn that academic uncertainty into an engineering challenge by coding the physics from the ground up. This simulator is the result of merging my Aerospace curriculum with the software development skills I gained in **Intro to Program Design.**
 
-## Future Goals
+---
 
-This project will be finished once the Ts and Pv Diagrams have been implemented. I plan to make a turbojet, turbofan, turboprop and ramjet simulator later during my college career; I will probably create this simulator after taking AERO 351 during my junior year at Texas A&M University. As such, this project will have two versions: 1.0 and 1.1. 
+## 🛠️ Project Features
 
-## Compilation
+### The Physics Engine 🔥
+The simulator handles the complex relationships between state variables $(P, v, T, u, h, s)$ using:
+* **Ideal Gas Law & Isentropic Relations:** Dynamically solves for missing variables across different states.
+* **Performance Metrics:** Automatically calculates Thermal Efficiency ($\eta$), Net Work ($W_{net}$), and Heat Transfers ($Q_{in}$ and $Q_{out}$).
+* **Cold Air Standard Assumptions:** By focusing on cycles without phase changes, the engine utilizes constant specific heats for high-speed computation and logic verification.
 
-The following proccess is used to compile this project: 
+### Supported Cycles 🔁
+The simulator currently models three fundamental power cycles:
+1. **Brayton Cycle:** The foundation of Jet Propulsion ✈️
+2. **Otto Cycle:** Internal combustion for Gasoline engines 🚗
+3. **Diesel Cycle:** High-compression cycles for heavy-duty transport 🚛
 
-1. Open WSL through terminal
-2. Run the following commands
-```
+
+
+### Software Architecture 📦
+* **Object-Oriented Design:** Developed with a modular architecture where thermodynamic processes are treated as objects, allowing for easy expansion.
+* **Graphical User Interface (GUI):** Leveraged the **Qt Framework** to move beyond simple scripts, creating a full GUI that enhances the user experience.
+* **Environment:** Developed and tested within **WSL (Windows Subsystem for Linux)**.
+
+---
+
+## 🚀 Future Roadmap (The Path to AERO 351)
+This project is an evolving tool. As I progress through my Aerospace Engineering degree at **Texas A&M**, I plan to release:
+
+* **Version 1.1 - 1.2:** Implementation of dynamic **T-s (Temperature-Entropy)** and **P-v (Pressure-Specific Volume)** diagrams.
+* **Version 2.0:** After taking **AERO 351** during my junior year, I will write a new thermodynamic simulator that expands this simulator to compute th thermodynamic processes of:
+    * Turbojets & Turbofans
+    * Turboprops
+    * Ramjets
+---
+
+## 💻 Compilation & Installation
+
+To run the simulator locally using WSL:
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/ZeshanAJavaid/Thermodynamic-Cycle-Simulator](https://github.com/ZeshanAJavaid/Thermodynamic-Cycle-Simulator)
+   cd Thermodynamic-Cycle-Simulator
+
+2. **Run the compilation script:**
+```bash
 chmod +x ./compilation.sh
 ./compilation.sh
+```
+3. **Run the Project**
+```bash
 ./build/sim
 ```
+
+Gig'em 👍

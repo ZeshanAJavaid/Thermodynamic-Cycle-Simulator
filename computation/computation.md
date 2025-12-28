@@ -10,6 +10,8 @@ This directory contains all the algorithms used to compute the thermodynamic sta
 
 #### Files
 
+---
+
 ##### **source files**
 
 The cpp files in this directory is as follows:
@@ -19,6 +21,8 @@ The cpp files in this directory is as follows:
 4. **heat_rejection.cpp:** this file contains all the heat_rejection process logic.
 5. **thermo_state.cpp:** this file contains the class that stores all the thermodynamic states.
 
+---
+
 ##### **header files**
 
 The header files in this directory is as follows:
@@ -27,6 +31,8 @@ The header files in this directory is as follows:
 3. **heat_addition.h:** this file contains all the blueprint for the heat_addition.cpp file.
 4. **heat_rejection.h:** this file contains all the blueprint for the heat_rejection.cpp file.
 5. **thermo_state.h:** this file contains all the blueprint for the thermo_state.cpp file.
+
+---
 
 ##### **readme file**
 
@@ -38,13 +44,15 @@ This directory contains the three different cycles this simulator supports; Bray
 
 ### Files
 
+---
+
 ##### **source file**
 
 The cpp files in this directory is as follows:
 1. **brayton.cpp:** this file contains all the brayton cycle logic.
 2. **diesel.cpp:** this file contains all the diesel cycle logic.
 3. **otto.cpp:** this file contains all the otto cycle logic.
-
+---
 ##### **header files**
 
 The header files in this directory is as follows:
@@ -58,13 +66,19 @@ This directory contains all the ideal gas implementations.
 
 ### Files
 
+---
+
 #### **source files**
 
 This directory contains the gas.cpp file. This file defines all the functions required to compute various thermodynamic properties with the ideal gas assumptions.
 
+---
+
 #### **header files**
 
 This directory contains the gas.h file. This file lays out all the functions required to compute various thermodynamic properties with the ideal gas assumptions.
+
+---
 
 #### **readme file**
 

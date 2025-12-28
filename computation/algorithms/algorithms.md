@@ -2,6 +2,8 @@
 
 This document contains the formulas required to compute the thermodynamic properties during each proccess. 
 
+---
+
 ## 2. COMPRESSION EQUATIONS
 
 The following equations were used to find the thermodynamic properties during compression.
@@ -63,6 +65,8 @@ The following equations were used to find the thermodynamic properties during co
 - $W$ is work of compressor ($\frac{kJ}{kg}$)
 - $h$ is specific enthalpy ($\frac{kJ}{kg}$)
 - $\eta$ is isentropic efficiency (%)
+
+---
 
 ### 2. Diesel/Otto Cycle Compression Stroke
 
@@ -136,7 +140,6 @@ The following equations were used to find the thermodynamic properties during co
 - $u$ is internal energy ($\frac{kJ}{kg}$)
 - $\eta$ is isentropic efficiency (%)
 
-
 ## 3. HEAT ADDITION EQUATIONS
 
 The following equations were used to find the thermodynamic properties during heat addition.
@@ -194,6 +197,7 @@ The following equations were used to find the thermodynamic properties during he
 - $p$ is heat in ($kPa$)
 - $v$ is specific internal energy ($\frac{m^3}{kg}$)
 
+---
 
 ### 2. Otto Cycle Combustion Stroke
 
@@ -310,6 +314,8 @@ The following equations were used to find the thermodynamic properties during ex
 - $h$ is specific enthalpy ($\frac{kJ}{kg}$)
 - $\eta$ is isentropic efficiency (%)
 
+---
+
 ### 2. Diesel/Otto Cycle Power Stroke
 
 #### Pressure 
@@ -370,7 +376,6 @@ The following equations were used to find the thermodynamic properties during ex
 - $W$ is work of power stroke ($\frac{kJ}{kg}$)
 - $u$ is specific internal energy ($\frac{kJ}{kg}$)
 - $\eta$ is isentropic efficiency (%)
-
 
 ## 5. HEAT REJECTION EQUATIONS
 

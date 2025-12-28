@@ -14,6 +14,8 @@ The following formulas describe the ideal gas relationships used in the implemen
 - $R$ is ideal gas constant ($\frac{kJ}{kg K}$)
 - $T$ is temperature ($K$)
 
+---
+
 #### **Isothermal Proccesses**
 
 **2.** $\large p_1v_1 = p_2v_2 $
@@ -27,6 +29,8 @@ The following formulas describe the ideal gas relationships used in the implemen
 **4.** $\Large \frac{v_1}{T_1} = \frac{v_2}{T_2}$
 - $v$ is specific volume ($\frac{m^3}{kg}$)
 - $T$ is temperature (K)
+
+---
 
 #### **Adiabatic/Isentropic Proccesses**
 
@@ -44,6 +48,8 @@ The following formulas describe the ideal gas relationships used in the implemen
 - $v$ is specific volume ($\frac{m^3}{kg}$)
 - $T$ is temperature ($K$)
 - $\gamma$ is the specific heat ratio (unitless)
+
+---
 
 #### **Polytropic Proccesses**
 
@@ -63,9 +69,13 @@ The following formulas describe the ideal gas relationships used in the implemen
 - $n$ is the polytropic index  (unitless)
 
 
+---
+
 ## 2. NASA POLYNOMIALS
 
 The following formulas use the NASA POLYNOMIALS to find various thermodynamic properties.
+
+---
 
 #### **Isobaric Specific Heat Constant: $c_p(T)$**
 
@@ -76,6 +86,7 @@ The following formulas use the NASA POLYNOMIALS to find various thermodynamic pr
 - $R$ is ideal gas constant ($\frac{kJ}{kg K}$)
 - $m$ is molar mass of air ($\frac{kg}{kmol}$)
 
+---
 
 #### **Isochoric Specific Heat Constant: $c_v(T)$**
 
@@ -87,6 +98,8 @@ The following formulas use the NASA POLYNOMIALS to find various thermodynamic pr
 - $R$ is ideal gas constant ($\frac{kJ}{kg K}$)
 - $m$ is molar mass of air ($\frac{kg}{kmol}$)
 
+---
+
 #### **Specific Enthalpy: $h(T)$**
 
 **3.** $\large h(T) = \int_{298.15}^{T} c_p(T) \, dT =\frac{RT(a_1 + \frac{a_2}{2}T + \frac{a_3}{3}T^2 + \frac{a_4}{4}T^3 + \frac{a_5}{5}T^4 + \frac{a_6}{T})}{m}$
@@ -95,6 +108,8 @@ The following formulas use the NASA POLYNOMIALS to find various thermodynamic pr
 - $T$ is temperature ($K$)
 - $R$ is ideal gas constant ($\frac{kJ}{kg K}$)
 - $m$ is molar mass of air ($\frac{kg}{kmol}$)
+
+---
 
 #### **Specific Internal Energy: $h(T)$**
 
@@ -105,6 +120,8 @@ The following formulas use the NASA POLYNOMIALS to find various thermodynamic pr
 - $R$ is ideal gas constant ($\frac{kJ}{kg K}$)
 - $m$ is molar mass of air ($\frac{kg}{kmol}$)
 
+---
+
 #### **Specific Entropy: $s^o(T)$**
 
 **5.** $\large s^o(T) = \int_{0}^{T} \frac{c_p(T)}{T} \, dT = \frac{R(a_1\ln{T} + a_2T + \frac{a_3}{2}T^2 + \frac{a_4}{3}T^3 + \frac{a_5}{4}T^4 + a_7)}{m}$
@@ -114,3 +131,4 @@ The following formulas use the NASA POLYNOMIALS to find various thermodynamic pr
 - $R$ is ideal gas constant ($\frac{kJ}{kg K}$)
 - $m$ is molar mass of air ($\frac{kg}{kmol}$)
 
+---

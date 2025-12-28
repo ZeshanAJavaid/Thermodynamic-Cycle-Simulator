@@ -6,9 +6,13 @@ The following document contains the layout of the gui directory
 
 This directory contains the images required by this GUI
 
-1. **brayton_cycle.png** -> This file contains the brayton cycle image
-2. **diesel_cycle.png** -> This file contains the diesel cycle image
-3. **otto_cycle.png** -> This file contains the otto cycle image
+1. **brayton_image.png** -> This file contains the brayton cycle image for the brayton input window.
+2. **diesel_image.png** -> This file contains the diesel cycle image for the diesel input window.
+3. **otto_image.png** -> This file contains the otto cycle image for the otto window.
+4. **brayton_cycle.png** -> This file contains the brayton cycle image for the selector window.
+5. **diesel_image.png** -> This file contains the diesel cycle image for the selector window.
+6. **otto_image.png** -> This file contains the otto cycle image for the selector window.
+7. **entry_window_image.png** -> This file contains the entry image for the main window.
 
 ## gui/src
 
@@ -26,6 +30,7 @@ The directory, cpp_files contains the following cpp files:
 8. **selection.cpp** -> Contains the logic for the selection
 9. **states_window.cpp** -> Contains the logic for the states window
 
+---
 The directory, headers contains the following h files: 
 
 1. **brayton_inputs.h** -> Outlines the brayton_inputs.cpp file
