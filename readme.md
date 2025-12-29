@@ -3,9 +3,9 @@
 > **"When getting an 'A' isn't enough: Bridging the gap between grades and understanding."**
 
 ## 📖 Background
-After finishing my final exam for **AERO 212: Introduction to Aerothermodynamics** at Texas A&M University, I had a realization. Even though I secured an 'A' in the course, I felt a disconnect between the grade on paper and my actual grasp of thermodynamics during the exam.
+After finishing my final exam for **AERO 212: Introduction to Aerothermodynamics** at Texas A&M University, I had a realization. Even though I secured an 'A' in the course, I felt a disconnect between the grade on my screen and my actual grasp of thermodynamics during the exam.
 
-I didn't want to just pass; I wanted to master the material. I decided to turn that academic uncertainty into an engineering challenge by coding the physics from the ground up. This simulator is the result of merging my Aerospace curriculum with the software development skills I gained in **Intro to Program Design.**
+I didn't want to just pass; I wanted to master the material. As a result, I decided to turn that academic uncertainty into an engineering challenge by coding the physics from the ground up. This simulator is the result of merging my Aerospace curriculum with the software development skills I gained in **CSCE 120: Intro to Program Design and Concepts.**
 
 ---
 
@@ -52,13 +52,13 @@ To run the simulator locally using WSL:
    cd Thermodynamic-Cycle-Simulator
 
 2. **Run the compilation script:**
-```bash
-chmod +x ./compilation.sh
-./compilation.sh
-```
+    ```bash
+    chmod +x ./compilation.sh
+    ./compilation.sh
+
 3. **Run the Project**
-```bash
-./build/sim
-```
+    ```bash
+    ./build/sim
+
 
 Gig'em 👍
