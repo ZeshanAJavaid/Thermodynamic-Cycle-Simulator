@@ -36,7 +36,7 @@ The simulator currently models three fundamental power cycles:
 This project is an evolving tool. As I progress through my Aerospace Engineering degree at **Texas A&M**, I plan to release:
 
 * **Version 1.1 - 1.2:** Implementation of dynamic **T-s (Temperature-Entropy)** and **P-v (Pressure-Specific Volume)** diagrams.
-* **Version 2.0:** After taking **AERO 351** during my junior year, I will write a new thermodynamic simulator that expands this simulator to compute th thermodynamic processes of:
+* **Version 2.0:** After taking **AERO 351** during my junior year, I will write a new thermodynamic simulator that expands this simulator to compute the thermodynamic processes of:
     * Turbojets & Turbofans
     * Turboprops
     * Ramjets

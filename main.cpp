@@ -7,6 +7,7 @@ int main(int argc, char* argv[])
     QApplication app(argc, argv);
     
     MainWindow* mainWin = new MainWindow();
+    mainWin->setAttribute(Qt::WA_DeleteOnClose);
 
     QScreen *screen = QGuiApplication::primaryScreen();
     QRect screenGeometry = screen->availableGeometry();
